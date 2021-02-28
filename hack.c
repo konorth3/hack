@@ -73,8 +73,8 @@ int main()
 	}
 	time_t result = end - start;
 	int h = result /(60 * 60 * CLOCKS_PER_SEC);
-	int min = result /(60 * CLOCKS_PER_SEC);
-	int s = result / CLOCKS_PER_SEC;
+	int min = (result /(60 * CLOCKS_PER_SEC)) % 60;
+	int s = (result / CLOCKS_PER_SEC) % 60;
 	int ms = result % CLOCKS_PER_SEC;
 	cout << " spent: " << h << " h " << min << " min " << s << "." << ms << " s" << endl;
 	
